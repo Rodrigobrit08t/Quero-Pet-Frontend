@@ -5,7 +5,7 @@ import './HeroSection.css';
 
 
 
-function HeroSection() {
+function HeroSection () {
     return (
         <div className='hero-container'>
             <h1>Titulo bacana</h1>
