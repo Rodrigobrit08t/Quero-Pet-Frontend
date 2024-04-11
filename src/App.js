@@ -10,12 +10,11 @@ function App() {
   return (
     <>
         <Router>
-            <NavBar>
-                <Routes>
-                    <Route path='/' exact component={Inicio}></Route>
-                </Routes>
-            </NavBar>
-        </Router>
+        <NavBar />
+        <Routes>
+          <Route path='/' exact element={<Inicio />} />
+        </Routes>
+      </Router>
     </>
   );
 }
