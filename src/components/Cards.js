@@ -13,19 +13,19 @@ function Cards() {
                         src='images/pet-1.jpg'
                         text='Descrição'
                         label='Nome' 
-                        path='/Adotar'
+                        path='/Pets'
                     />
                     <CardItem 
                         src='images/pet-2.jpg'
                         text='Descrição'
                         label='Nome' 
-                        path='/Adotar'
+                        path='/Pets'
                     />
                     <CardItem 
                         src='images/pet-3.jpg'
                         text='Descrição'
                         label='Nome' 
-                        path='/Adotar'
+                        path='/Pets'
                     />
                 </ul>
             </div>

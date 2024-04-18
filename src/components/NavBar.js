@@ -29,10 +29,10 @@ function NavBar() {
     <>
         <nav className='navbar'>
             <div className='navbar-container'>
-                <img src={Logotipo} alt="Logotipo" height="100px" width= "100px"></img>
+                <img src={Logotipo} alt="Logotipo"  className='Logotipo'></img>
 
                 <div className='menu-icon' onClick={handleClick}>
-                <i className={click ? 'fas fa-times' : 'fas fa-bars'}></i>
+                    <i className={click ? 'fas fa-times' : 'fas fa-bars'}></i>
                 </div>
                 <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                     <li className='nav-item'>
@@ -41,8 +41,8 @@ function NavBar() {
                         </Link>
                     </li>
                     <li className='nav-item'>
-                        <Link to='/Adotar' className='nav-links' onClick={closeMobileMenu}>
-                            Adotar
+                        <Link to='/Pets' className='nav-links' onClick={closeMobileMenu}>
+                            Pets
                         </Link>
                     </li>
                     <li className='nav-item'>

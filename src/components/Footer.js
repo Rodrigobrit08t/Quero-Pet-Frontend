@@ -23,10 +23,9 @@ function Footer() {
                     <div class='footer-logo'>
                         <Link to='/' className='social-logo'>
                             <img src={Logotipo} alt="Logotipo" height="100px" width="100px"></img>
-                            <i class='fab fa-typo3' />
                         </Link>
                     </div>
-                    <small class='website-rights'>Quero Pet © 2024</small>
+                    <small class='website-rights'>QueroPet © 2024</small>
                 </div>
             </section>
         </div>
