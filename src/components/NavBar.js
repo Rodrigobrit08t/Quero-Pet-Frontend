@@ -56,8 +56,10 @@ function NavBar() {
                         </Link>
                     </li>
                 </ul>
-
-                {button && <Button buttonStyle='btn--outline'>Cadastre-se</Button>}
+                
+                <Link to='/Cadastrar' onClick={closeMobileMenu}>
+                        <Button buttonStyle='btn--outline'>Cadastre-se</Button>
+                </Link>
 
             </div>
         </nav>
