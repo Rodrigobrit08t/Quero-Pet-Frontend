@@ -1,12 +1,11 @@
 import React from 'react';
 import NavBar from './components/NavBar';
+import Footer from './components/Footer';
 import './App.css';
 import Inicio from './components/pages/Inicio';
-import Entrar from './components/pages/Entrar';
-import Cadastrar from './components/pages/Cadastrar';
+import Entrar from './components/pages/Login/Entrar';
+import Cadastrar from './components/pages/Login/Cadastrar';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
-
-
 
 function App() {
   return (
@@ -18,6 +17,7 @@ function App() {
           <Route path='/Entrar' exact element={<Entrar />} />
           <Route path='/Cadastrar' exact element={<Cadastrar />} />
         </Routes>
+        <Footer />
       </Router>
     </>
   );

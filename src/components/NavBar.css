@@ -81,6 +81,14 @@
     display: none;
   }
 
+  .user{
+    width: 70px;
+    height: 70px;
+    padding: 5px;
+    margin-bottom: 16px;
+    margin-left: 15px;
+  }
+
   
   @media screen and (max-width: 960px) {
     .NavbarItems {
@@ -161,6 +169,10 @@
       background: #fff;
       color: #242424;
       transition: 250ms;
+    }
+
+    .user{
+      display: none;
     }
 
   }

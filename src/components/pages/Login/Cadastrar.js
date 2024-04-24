@@ -2,7 +2,6 @@ import React from 'react'
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import './Entrar.css';
-import Footer from '../Footer';
 
 function Cadastrar() {
 
@@ -61,7 +60,7 @@ function Cadastrar() {
           <Link to="/Entrar">Acesse sua conta aqui</Link>
         </div>
       </form>
-    </div><Footer />
+    </div>
     </>
   )
 }

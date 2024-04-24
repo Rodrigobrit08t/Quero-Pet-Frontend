@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import Logotipo from "../img/Logotipo.svg";
-import { Link } from 'react-router-dom';
+import User from '../img/user.svg'
 import { Button } from './Button';
+import { Link } from 'react-router-dom';
 import './NavBar.css';
 
 function NavBar() {
+    
     const [click, setClick] = useState(false);
     const [button, setButton] = useState(true);
 
@@ -13,15 +15,15 @@ function NavBar() {
 
     const showButton = () => {
         if (window.innerWidth <= 960) {
-            setButton(false)
+          setButton(false);
         } else {
-            setButton(true)
+          setButton(true);
         }
-    };
+      };
 
-    useEffect(() => {
-        showButton()
-    }, []);
+      useEffect(() => {
+        showButton();
+      }, []);
 
     window.addEventListener('resize', showButton);
 
@@ -30,9 +32,8 @@ function NavBar() {
             <nav className='navbar'>
                 <div className='navbar-container'>
                     <img src={Logotipo} alt="Logotipo" className='Logotipo'></img>
-
                     <div className='menu-icon' onClick={handleClick}>
-                        <i className={click ? 'fas fa-times' : 'fas fa-bars'}></i>
+                        <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
                     </div>
                     <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                         <li className='nav-item'>
@@ -56,11 +57,10 @@ function NavBar() {
                             </Link>
                         </li>
                     </ul>
-
-
-                    {button && <Button buttonStyle='btn--outline'>Cadastre-se</Button>}
-
-
+                    {button && <Button buttonStyle='btn--outline'>Cadastrar</Button>}
+                    <Link to='/User'>
+                        <img src={User} className='user'></img>
+                    </Link>
                 </div>
             </nav>
         </>

@@ -2,7 +2,6 @@ import React from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Entrar.css';
-import Footer from '../Footer';
 
 export function Entrar() {
 
@@ -69,7 +68,7 @@ export function Entrar() {
                 </div>
             </form>
 
-        </div><Footer />
+        </div>
     </>
     );
 
