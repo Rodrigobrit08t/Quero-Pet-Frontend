@@ -128,8 +128,8 @@ function Dashboard() {
               </LineChart>
             </ResponsiveContainer>
           </div>
-          <Sidebar />
         </main>
+        <Sidebar />
       </div>
 
     </>
