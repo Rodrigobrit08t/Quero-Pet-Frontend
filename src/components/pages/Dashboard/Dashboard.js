@@ -2,7 +2,6 @@ import React from 'react';
 import './Dashboard.css';
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LineChart, Line }
   from 'recharts';
-import Sidebar from './Sidebar';
 
 function Dashboard() {
 
@@ -129,7 +128,6 @@ function Dashboard() {
             </ResponsiveContainer>
           </div>
         </main>
-        <Sidebar />
       </div>
 
     </>
