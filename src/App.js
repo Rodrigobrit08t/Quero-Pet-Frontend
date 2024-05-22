@@ -5,7 +5,7 @@ import './App.css';
 import Inicio from './components/pages/Inicio';
 import Entrar from './components/pages/Login/Entrar';
 import Cadastrar from './components/pages/Login/Cadastrar';
-import Dashboard from './components/pages/Dashboard/Dashboard';
+import Dashboard from './components/pages/Dashboard';
 import User from './components/pages/User';
 import Pets from './components/pages/Pets';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';

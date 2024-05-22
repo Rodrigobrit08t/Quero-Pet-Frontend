@@ -11,6 +11,7 @@ body {
     line-height: 1px;
     font-size: 20px;
   }
+
   .icon_header {
     vertical-align: middle;
     line-height: 1px;
@@ -27,16 +28,6 @@ body {
     cursor: pointer;
   }
   
-  .grid-container {
-    display: grid;
-    grid-template-columns: 260px 1fr 1fr 1fr;
-    grid-template-rows: 0.2fr 3fr;
-    grid-template-areas:
-      'sidebar header header header'
-      'sidebar main main main';
-    height: 100vh;
-  }
-  
   .header {
     grid-area: header;
     height: 60px;
@@ -49,65 +40,6 @@ body {
   
   .menu-icon {
     display: none;
-  }
-
-  #sidebar {
-    grid-area: sidebar;
-    width: 200px;
-    height: calc(100% - 347px ); /*614px  168px */;
-    background-color: #263043;
-    overflow-y: auto;
-    transition: all 0.5s;
-    -webkit-transition: all 0.5s;
-    position: absolute; 
-    left: 0; 
-    top: 0;
-    z-index: 1;
-    margin-top: 4%;
-  }
-  
-  .sidebar-title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px 0px 30px;
-    margin-bottom: 30px;
-  }
-  
-  .sidebar-title > span {
-    display: none;
-  }
-  
-  .sidebar-brand {
-    margin-top: 15px;
-    font-size: 20px;
-    font-weight: 700;
-  }
-  
-  .sidebar-list {
-    padding: 0;
-    list-style-type: none;
-  }
-  
-  .sidebar-list-item {
-    padding: 20px 20px 20px 20px;
-    font-size: 18px;
-  }
-  
-  .sidebar-list-item:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    cursor: pointer;
-  }
-  
-  .sidebar-list-item > a {
-    text-decoration: none;
-    color: #9e9ea4;
-  }
-  
-  .sidebar-responsive {
-    display: inline !important;
-    position: absolute;
-    z-index: 12 !important;
   }
   
   .main-container {

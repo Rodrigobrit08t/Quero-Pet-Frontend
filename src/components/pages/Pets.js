@@ -1,5 +1,5 @@
 import React from 'react'
-import Sidebar from './Dashboard/Sidebar'
+import Sidebar from './CRUD/Sidebar'
 import '../../App.css'
 import Cards from '../Cards'
 function Pets() {

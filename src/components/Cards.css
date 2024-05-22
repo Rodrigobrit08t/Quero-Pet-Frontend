@@ -1,6 +1,7 @@
 .cards {
   padding: 4rem;
-  background: #fff;
+  background: #1d2634;
+
 }
 
 h1 {
@@ -32,16 +33,16 @@ h1 {
   border-radius: 10px;
   width: 200px;
   height: 250px;
-  box-shadow: 0 6px 20px rgba(56, 125, 255, 0.17);
+  box-shadow: 0 6px 20px rgba(10, 10, 10, 0.17);
 }
 
 .cards__item__link {
   display: flex;
   flex-flow: column;
   width: 100%;
-  box-shadow: 0 6px 20px rgba(56, 125, 255, 0.17);
-  -webkit-filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
-  filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
+  box-shadow: 0 6px 20px rgba(15, 15, 15, 0.17);
+  -webkit-filter: drop-shadow(0 6px 20px rgba(24, 24, 24, 0.017));
+  filter: drop-shadow(0 6px 20px rgba(44, 44, 44, 0.017));
   border-radius: 10px;
   overflow: hidden;
   text-decoration: none;
