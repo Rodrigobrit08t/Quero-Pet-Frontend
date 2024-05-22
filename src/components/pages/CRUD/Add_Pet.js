@@ -1,10 +1,13 @@
 import React from 'react'
+import Sidebar from './Sidebar'
+import './CRUD.css'
 
 function Add_Pet() {
   return (
-    <div>
+    <>
       
-    </div>
+      <Sidebar/>
+    </>
   )
 }
 
