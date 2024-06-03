@@ -8,30 +8,32 @@ import Cadastrar from './components/pages/Login/Cadastrar';
 import Dashboard from './components/pages/Dashboard';
 import User from './components/pages/User';
 import Pets from './components/pages/Pets';
+import Add_Pet from './components/pages/CRUD/Add_Pet';
+import Edit_Pet from './components/pages/CRUD/Edit_Pet';
+import Remove_Pet from './components/pages/CRUD/Remove_Pet';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 
 function App() {
   return (
     <>
-        <Router>
-        <NavBar />
-        <Routes>
-          <Route path='/' exact element={<Inicio />} />
-          <Route path='/Entrar' exact element={<Entrar />} />
-          <Route path='/Cadastrar' exact element={<Cadastrar />} />
-          <Route path='/Dashboard' exact element={<Dashboard />} />
-          <Route path='/User' exact element={<User />} />
-          <Route path='/Pets' exact element={<Pets />} />
-        </Routes>
-        <Footer />
+      <Router>
+          <NavBar />          
+            <Routes>
+              <Route path='/' exact element={<Inicio />} />
+              <Route path='/Entrar' exact element={<Entrar />} />
+              <Route path='/Cadastrar' exact element={<Cadastrar />} />
+              <Route path='/Dashboard' exact element={<Dashboard />} />
+              <Route path='/User' exact element={<User />} />
+              <Route path='/Pets' exact element={<Pets />} />
+              <Route path='/Add_Pet' exact element={<Add_Pet />} />
+              <Route path='/Remove_Pet' exact element={<Remove_Pet />} />
+              <Route path='/Edit_Pet' exact element={<Edit_Pet />} />
+            </Routes>
+          
+          <Footer />
+        
       </Router>
     </>
-
-    /*
-    <Route path='/Add_Pet' exact element={<Add_Pet />} />
-    <Route path='/Remove_Pet' exact element={<Remove_Pet />} />
-    <Route path='/Edit_Pet' exact element={<Edit_Pet />} />
-    */
   );
 }
 

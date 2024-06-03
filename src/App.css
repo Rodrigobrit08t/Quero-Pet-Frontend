@@ -5,6 +5,10 @@
     font-family: 'PT Sans', sans-serif;
   }
 
+  body, html, #root {
+    height: 100%;
+  }
+
   .inico,
   .Pets,
   .Dashboard,

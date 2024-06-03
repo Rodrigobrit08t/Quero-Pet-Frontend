@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import './CRUD.css';
 
 
-function Sidebar({openSidebarToggle, OpenSidebar}) {
+function Sidebar() {
     return (
-        <aside id="sidebar" className={openSidebarToggle ? "sidebar-responsive" : ""}>
+        <aside id="sidebar">
             <ul className='sidebar-list'>
                 <li className='sidebar-list-item'>
                     <Link to='/Add_Pet'>
