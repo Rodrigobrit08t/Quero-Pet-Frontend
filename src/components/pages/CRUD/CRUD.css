@@ -6,50 +6,38 @@
     'sidebar header header header'
     'sidebar main main main';
   height: 100vh;
+  background-color: #1d2634;
+  overflow-y: auto;
 }
 
-.container {
-  height: fit-content;
-  margin-top: 50px;
-  margin-bottom: 50px;
-}
-
-.pad{
-  display: block;
-  height: 500px;
-}
-
-#sidebar {
+.grid-container .sidebar {
   grid-area: sidebar;
   width: 200px;
   height: 100%;
   background-color: #263043;
-  overflow-y: auto;
   transition: all 0.5s;
   -webkit-transition: all 0.5s;
-  position: absolute;
-  left: 0;
-  top: 0;
+  position: relative;
   z-index: 1;
-  margin-top: 80px;
 }
 
-.sidebar-title {
+.grid-container .header {
+  grid-area: header;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 15px 30px 0px 30px;
-  margin-bottom: 30px;
+  justify-content: center;
+  background-color: #1d2634;
+  padding: 40px;
+  font-size: 25px;
 }
 
-.sidebar-title>span {
-  display: none;
-}
-
-.sidebar-brand {
-  margin-top: 15px;
-  font-size: 20px;
-  font-weight: 700;
+.grid-container .main {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #1d2634;
+  padding: 10px;
 }
 
 .sidebar-list {
@@ -80,20 +68,64 @@
 
 .inputContainerRadio {
   display: flex;
-  justify-content:flex-start;
+  justify-content: flex-start;
   flex-direction: column;
 
 }
 
-.submit {
-  width: 150px;
-  
+.grid-container .main form{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.grid-container form  .inputContainer {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.grid-container form  .inputContainer label {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  margin-bottom: 8px;
+}
+
+.grid-container form  .inputContainer input {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 16px;
+  width: 520px;
+  height: 49px;
+  border: 1px solid #5C73DB;
+  border-radius: 12px;
+  margin-bottom: 12px;
+
+}
+
+.grid-container .submit {
+  height: 48px;
+  width: 100px;
   background: #4763E4;
   border-radius: 12px;
   color: #fff;
   border: none;
   font-family: 'Inter';
   font-style: normal;
-  font-size: 23px;
+  font-weight: 400;
+  font-size: 18px;
   line-height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin: 15px;
+
+}
+
+.grid-container .submit:hover {
+  cursor: pointer;
+  opacity: 0.8;
 }

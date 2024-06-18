@@ -31,7 +31,9 @@ function NavBar() {
         <>
             <nav className='navbar'>
                 <div className='navbar-container'>
-                    <img src={Logotipo} alt="Logotipo" className='Logotipo'></img>
+                    <Link to='/'>
+                        <img src={Logotipo} alt="Logotipo" className='Logotipo'></img>
+                    </Link>
                     <div className='menu-icon' onClick={handleClick}>
                         <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
                     </div>

@@ -34,6 +34,7 @@ h1 {
   width: 200px;
   height: 250px;
   box-shadow: 0 6px 20px rgba(10, 10, 10, 0.17);
+  background-color: #eee;
 }
 
 .cards__item__link {
@@ -98,7 +99,7 @@ h1 {
 }
 
 .cards__item__text {
-  color: #252e48;
+  color: #333333;
   font-size: 18px;
   line-height: 24px;
 }

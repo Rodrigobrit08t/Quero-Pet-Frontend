@@ -1,17 +1,17 @@
-import React from 'react'
+import React from 'react';
 import Sidebar from './Sidebar';
 import './CRUD.css';
-import { useState } from "react";
 
 function Remove_Pet() {
-
   return (
-    <>
-      <div className='container'>
-        <header className='header'>
-          <span>Busque o pet a ser removido</span>
-        </header>
-
+    <div className='grid-container'>
+      <div className='sidebar'>
+        <Sidebar />
+      </div>
+      <header className='header'>
+        <span>Busque o pet a ser removido</span>
+      </header>
+      <div className='main'>
         <form>
           <div className='inputContainer'>
             <label>Insira o ID do Pet</label>
@@ -19,19 +19,15 @@ function Remove_Pet() {
               type="text"
               name="ID"
               id="ID"
-            >
-            </input>
+            />
           </div>
         </form>
-
-        <div className='pad'>
-          
-        </div>
-
+        <button className='submit'>Buscar</button>
       </div>
-      <Sidebar />
-    </>
-  )
+    </div>
+
+
+  );
 }
 
 export default Remove_Pet

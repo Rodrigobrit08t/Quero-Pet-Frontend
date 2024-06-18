@@ -11,6 +11,10 @@ import Pets from './components/pages/Pets';
 import Add_Pet from './components/pages/CRUD/Add_Pet';
 import Edit_Pet from './components/pages/CRUD/Edit_Pet';
 import Remove_Pet from './components/pages/CRUD/Remove_Pet';
+import Produto from './components/pages/Produto';
+import Proposito from './components/pages/Proposito';
+import Contato from './components/pages/Contato';
+import Termos from './components/pages/Termos';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 
 function App() {
@@ -28,6 +32,10 @@ function App() {
               <Route path='/Add_Pet' exact element={<Add_Pet />} />
               <Route path='/Remove_Pet' exact element={<Remove_Pet />} />
               <Route path='/Edit_Pet' exact element={<Edit_Pet />} />
+              <Route path='/Produto' exact element={<Produto />} />
+              <Route path='/Proposito' exact element={<Proposito />} />
+              <Route path='/Contato' exact element={<Contato />} />
+              <Route path='/Termos' exact element={<Termos />} />
             </Routes>
           
           <Footer />

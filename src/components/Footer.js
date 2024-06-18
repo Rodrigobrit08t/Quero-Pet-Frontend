@@ -11,10 +11,10 @@ function Footer() {
                 <div className='footer-link-wrapper'>
                     <div class='footer-link-items'>
                         <h2>Sobre Nós</h2>
-                        <Link to='/Sobre'>Sobre</Link>
-                        <Link to='/'>Propósito</Link>
-                        <Link to='/'>Produto</Link>
-                        <Link to='/'>Termos de Uso</Link>
+                        <Link to='/Produto'>Produto</Link>
+                        <Link to='/Proposito'>Propósito</Link>
+                        <Link to='/Contato'>Contato</Link>
+                        <Link to='/Termos'>Termos de Uso</Link>
                     </div>
                 </div>
             </div>
