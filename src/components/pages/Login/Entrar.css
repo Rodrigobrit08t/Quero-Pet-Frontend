@@ -12,10 +12,10 @@
     flex-direction: column;
     margin-bottom: 40px;
   }
-  
+
   .container .header span {
-    font-weight: 500;
-    font-size: 20px;
+    font-weight: 300;
+    font-size: 30px;
     line-height: 24px;
     padding-top: 15px;
   }
@@ -105,3 +105,5 @@
     text-decoration-line: underline;
     color: #5C73DB;
   }
+
+  
