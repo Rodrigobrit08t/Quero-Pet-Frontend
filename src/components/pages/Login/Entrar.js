@@ -8,6 +8,16 @@ export function Entrar() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
+    const handleClick = () => {
+        if (email === '' || password === '') {
+          alert('Por favor, preencha todos os campos.');
+        } else {
+          alert('Bem-Vindo!');
+          setPassword('');
+          setEmail('');
+        }
+      };
+
     /*
     const [signInWithEmailAndPassword, user, loading, error] =
         useSignInWithEmailAndPassword(auth);
@@ -43,7 +53,7 @@ export function Entrar() {
                         type="text"
                         name="email"
                         id="email"
-                        placeholder="seuemail@gmail.com"
+                        placeholder=""
                         onChange={(e) => setEmail(e.target.value)} />
                 </div>
 
@@ -53,13 +63,13 @@ export function Entrar() {
                         type="password"
                         name="password"
                         id="password"
-                        placeholder="******"
+                        placeholder=""
                         onChange={(e) => setPassword(e.target.value)} />
                 </div>
 
                 <a href="#">Esqueceu sua senha ?</a>
 
-                <button className="button" /*onClick={handleSignIn}*/>
+                <button className="button" onClick={handleClick} /*onClick={handleSignIn}*/>
                     Entrar
                 </button>
                 <div className="footer">

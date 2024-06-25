@@ -12,6 +12,19 @@ function Cadastrar() {
     const [phone, setPhone] = useState("");
     //const [description, setDescription] = useState("");
 
+    const handleClick = () => {
+        if (email === '' || password === '' || name === '' || cnpj === '' || phone === '') {
+          alert('Por favor, preencha todos os campos.');
+        } else {
+          alert('Bem-Vindo!');
+          setPassword('');
+          setEmail('');
+          setName('');
+          setCNPJ('');
+          setPhone('');
+        }
+      };
+
     /*
     const [createUserWithEmailAndPassword, user, loading, error] =
       useCreateUserWithEmailAndPassword(auth);
@@ -74,7 +87,7 @@ function Cadastrar() {
                             type="text"
                             name="email"
                             id="email"
-                            placeholder="seuemail@gmail.com"
+                            placeholder=""
                             onChange={(e) => setEmail(e.target.value)}
                         />
                     </div>
@@ -85,12 +98,12 @@ function Cadastrar() {
                             type="password"
                             name="password"
                             id="password"
-                            placeholder="******"
+                            placeholder=""
                             onChange={(e) => setPassword(e.target.value)}
                         />
                     </div>
 
-                    <button /*onClick={handleSignOut}*/ className="button">
+                    <button /*onClick={handleSignOut}*/ onClick={handleClick} className="button">
                         Cadastrar
                     </button>
                     <div className="footer">

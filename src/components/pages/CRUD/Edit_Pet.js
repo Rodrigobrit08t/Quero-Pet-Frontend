@@ -1,8 +1,21 @@
 import React from 'react';
 import Sidebar from './Sidebar';
 import './CRUD.css';
+import { useState } from "react";
 
 function Edit_Pet() {
+
+  const [id, setID] = useState("");
+
+  const handleClick = () => {
+    if ( id === '') {
+      alert('Por favor, preencha todos os campos.');
+    } else {
+      alert('TESTE');
+      setID('');
+    }
+  }
+
   return (
     <div className='grid-container'>
       <div className='sidebar'>
@@ -17,12 +30,13 @@ function Edit_Pet() {
             <label>Insira o ID do Pet</label>
             <input
               type="text"
-              name="ID"
-              id="ID"
+              name="id"
+              id="id"
+              onChange={(e) => setID(e.target.value)}
             />
           </div>
         </form>
-        <button className='submit'>Buscar</button>
+        <button onClick={handleClick} className='submit'>Buscar</button>
       </div>
     </div>
   );

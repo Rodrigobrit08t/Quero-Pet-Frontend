@@ -15,6 +15,22 @@ function Add_Pet() {
   const [is_vaccinated, setVacc] = useState("");
   const [description, setDescription] = useState("");
 
+  const handleClick = () => {
+    if (name === '' || breed === '', age ==='', weight ==='', color ==='', birth_date ==='', sex === '', is_vaccinated === '', description === '') {
+      alert('Por favor, preencha todos os campos.');
+    } else {
+      alert('Pet Cadastrado!');
+      setName('');
+      setBreed('');
+      setAge('');
+      setWeight('');
+      setColor('');
+      setBirth('');
+      setSex('');
+      setVacc('');
+      setDescription('');
+    }
+  }
 
   return (
     <>
@@ -120,7 +136,8 @@ function Add_Pet() {
               </div>
             </form>
             <br></br>
-            <button className='submit'>Cadastrar</button>
+            <button onClick={handleClick} className='submit'>Cadastrar</button>
+            
           </div>
 
 

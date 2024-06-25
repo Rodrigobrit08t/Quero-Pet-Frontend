@@ -1,6 +1,9 @@
 .cards {
   padding: 4rem;
   background: #1d2634;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
 
 }
 
