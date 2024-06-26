@@ -8,13 +8,15 @@ function Remove_Pet() {
   const [id, setID] = useState("");
 
   const handleClick = () => {
-    if ( id === '') {
+    if (id.trim() === '') {
       alert('Por favor, preencha todos os campos.');
+    } else if (!/^\d+$/.test(id)) {
+      alert('Por favor, insira um ID válido.');
     } else {
       alert('Pet Removido!');
       setID('');
     }
-  }
+  };
 
   return (
     <div className='grid-container'>

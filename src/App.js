@@ -6,7 +6,6 @@ import Inicio from './components/pages/Inicio';
 import Entrar from './components/pages/Login/Entrar';
 import Cadastrar from './components/pages/Login/Cadastrar';
 import Dashboard from './components/pages/Dashboard';
-import User from './components/pages/User';
 import Pets from './components/pages/Pets';
 import Add_Pet from './components/pages/CRUD/Add_Pet';
 import Edit_Pet from './components/pages/CRUD/Edit_Pet';
@@ -27,7 +26,6 @@ function App() {
               <Route path='/Entrar' exact element={<Entrar />} />
               <Route path='/Cadastrar' exact element={<Cadastrar />} />
               <Route path='/Dashboard' exact element={<Dashboard />} />
-              <Route path='/User' exact element={<User />} />
               <Route path='/Pets' exact element={<Pets />} />
               <Route path='/Add_Pet' exact element={<Add_Pet />} />
               <Route path='/Remove_Pet' exact element={<Remove_Pet />} />

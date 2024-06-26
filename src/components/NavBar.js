@@ -60,9 +60,6 @@ function NavBar() {
                         </li>
                     </ul>
                     {button && <Button buttonStyle='btn--outline'>Cadastrar</Button>}
-                    <Link to='/User'>
-                        <img src={User} className='user'></img>
-                    </Link>
                 </div>
             </nav>
         </>
