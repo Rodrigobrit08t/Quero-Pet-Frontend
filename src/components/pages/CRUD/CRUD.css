@@ -152,6 +152,19 @@
   width: 80%;
   max-width: 500px;
   position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-content .inputContainer{
+  padding: 3px;
+  
+}
+
+.modal-content .inputContainer input{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
 }
 
 .close {

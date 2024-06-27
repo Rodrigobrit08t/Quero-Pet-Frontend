@@ -8,8 +8,15 @@ function Edit_Pet() {
   const [id, setID] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
   
-  const [petName, setPetName] = useState('');
-  const [petAge, setPetAge] = useState('');
+  const [name, setName] = useState("");
+  const [breed, setBreed] = useState("");
+  const [age, setAge] = useState("");
+  const [weight, setWeight] = useState("");
+  const [color, setColor] = useState("");
+  const [birth_date, setBirth] = useState("");
+  const [sex, setSex] = useState("");
+  const [is_vaccinated, setVacc] = useState("");
+  const [description, setDescription] = useState("");
 
   const validateID = (id) => {
     return /^\d+$/.test(id);
@@ -19,7 +26,7 @@ function Edit_Pet() {
     if (id.trim() === '') {
       alert('Por favor, preencha todos os campos.');
     } else if (!validateID(id)) {
-      alert('Por favor, insira um ID válido (apenas números).');
+      alert('Por favor, insira um ID válido.');
     } else {
       setIsModalOpen(true);
     }
@@ -28,12 +35,26 @@ function Edit_Pet() {
   const handleSave = () => {
     alert(`Informações do Pet:
     ID: ${id}
-    Nome: ${petName}
-    Idade: ${petAge}`);
+    Nome: ${name}
+    Raça: ${breed}
+    Idade: ${age}
+    Peso: ${weight}
+    Cor: ${color}
+    Aniversário: ${birth_date}
+    Sexo: ${sex}
+    Vacinação: ${is_vaccinated}
+    Descrição: ${description};
+    `)
     setIsModalOpen(false);
     setID('');
-    setPetName('');
-    setPetAge('');
+    setName('');
+    setAge('');
+    setWeight('');
+    setColor('');
+    setBirth('');
+    setSex('');
+    setVacc('');
+    setDescription('');
   };
 
   const handleCloseModal = () => {
@@ -73,18 +94,64 @@ function Edit_Pet() {
               <label>Nome do Pet</label>
               <input
                 type="text"
-                value={petName}
-                onChange={(e) => setPetName(e.target.value)}
-                placeholder="Digite o nome do pet"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+            </div>
+            <div className='inputContainer'>
+              <label>Descrição do Pet</label>
+              <input
+                type="text"
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+              />
+            </div>
+            <div className='inputContainer'>
+              <label>Raça do Pet</label>
+              <input
+                type="text"
+                value={breed}
+                onChange={(e) => setBreed(e.target.value)}
               />
             </div>
             <div className='inputContainer'>
               <label>Idade do Pet</label>
               <input
                 type="text"
-                value={petAge}
-                onChange={(e) => setPetAge(e.target.value)}
-                placeholder="Digite a idade do pet"
+                value={age}
+                onChange={(e) => setAge(e.target.value)}
+              />
+            </div>
+            <div className='inputContainer'>
+              <label>Peso do Pet</label>
+              <input
+                type="text"
+                value={weight}
+                onChange={(e) => setWeight(e.target.value)}
+              />
+            </div>
+            <div className='inputContainer'>
+              <label>Cor do Pet</label>
+              <input
+                type="text"
+                value={color}
+                onChange={(e) => setColor(e.target.value)}
+              />
+            </div>
+            <div className='inputContainer'>
+              <label>Sexo do Pet</label>
+              <input
+                type="text"
+                value={sex}
+                onChange={(e) => setSex(e.target.value)}
+              />
+            </div>
+            <div className='inputContainer'>
+              <label>Aniversário do Pet</label>
+              <input
+                type="date"
+                value={birth_date}
+                onChange={(e) => setBirth(e.target.value)}
               />
             </div>
             <button onClick={handleSave} className='submit'>Salvar</button>
