@@ -16,7 +16,7 @@ function Add_Pet() {
   const [description, setDescription] = useState("");
 
   const handleClick = () => {
-    if (name === '' || breed === '', age ==='', weight ==='', color ==='', birth_date ==='', sex === '', is_vaccinated === '', description === '') {
+    if (name === '' || breed === '', age === '', weight === '', color === '', birth_date === '', sex === '', is_vaccinated === '', description === '') {
       alert('Por favor, preencha todos os campos.');
     } else {
       alert('Pet Cadastrado!');
@@ -39,8 +39,8 @@ function Add_Pet() {
           <div className='sidebar'>
             <Sidebar />
           </div>
-          <header className="header">
-            <span>Digite as informações do pet</span>
+          <header>
+            Digite as informações do pet
           </header>
           <div className='main'>
             <form>
@@ -55,11 +55,11 @@ function Add_Pet() {
                 />
               </div>
               <div className='inputContainer'>
-                <label htmlFor="decription">Descrição</label>
+                <label htmlFor="description">Descrição</label>
                 <input
                   type="text"
-                  name="decription"
-                  id="decription"
+                  name="description"
+                  id="description"
                   placeholder=""
                   onChange={(e) => setDescription(e.target.value)}
                 />
@@ -108,12 +108,14 @@ function Add_Pet() {
                 />
               </div>
 
-              <div className='inputContainerRadio'>
-                <label htmlFor="sex">Sexo</label>
-                <label for="M">Macho</label>
-                <input type="radio" name="sex" id="sex" value="M" onChange={(e) => setSex(e.target.value)} />
-                <label for="F">Fêmea</label>
-                <input type="radio" name="sex" id="sex" value="F" onChange={(e) => setSex(e.target.value)} />
+              <div className='inputContainer'>
+                <label>Sexo</label>
+                <div className='radioContainer'>
+                  <label htmlFor="M">Macho</label>
+                  <input className="small-radio" type="radio" name="sex" id="M" value="M" checked={sex === "M"} onChange={(e) => setSex(e.target.value)} />
+                  <label htmlFor="F">Fêmea</label>
+                  <input className="small-radio" type="radio" name="sex" id="F" value="F" checked={sex === "F"} onChange={(e) => setSex(e.target.value)} />
+                </div>
               </div>
 
               <div className='inputContainer'>
@@ -127,25 +129,24 @@ function Add_Pet() {
                 />
               </div>
 
-              <div className='inputContainerRadio'>
-                <label htmlFor="is_vaccinated">É Vacinado?</label>
-                <label for="T">Sim</label>
-                <input type="radio" name="is_vaccinated" id="is_vaccinated" value="T" onChange={(e) => setVacc(e.target.value)} />
-                <label for="F">Não</label>
-                <input type="radio" name="is_vaccinated" id="is_vaccinated" value="F" onChange={(e) => setVacc(e.target.value)} />
+              <div className='inputContainer'>
+                <label>É Vacinado?</label>
+                <div className='radioContainer'>
+                  <label htmlFor="T">Sim</label>
+                  <input className="small-radio" type="radio" name="is_vaccinated" id="T" value="T" checked={is_vaccinated === "T"} onChange={(e) => setVacc(e.target.value)} />
+                  <label htmlFor="F">Não</label>
+                  <input className="small-radio" type="radio" name="is_vaccinated" id="F" value="F" checked={is_vaccinated === "F"} onChange={(e) => setVacc(e.target.value)} />
+                </div>
               </div>
             </form>
             <br></br>
             <button onClick={handleClick} className='submit'>Cadastrar</button>
-            
+
           </div>
-
-
         </div>
       </div>
-
     </>
   )
 }
 
-export default Add_Pet
+export default Add_Pet;

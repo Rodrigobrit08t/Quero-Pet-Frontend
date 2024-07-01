@@ -1,5 +1,5 @@
-import React from 'react'
-import './Pages.css'
+import React from 'react';
+import './Pages.css';
 
 function Termos() {
   return (
@@ -44,7 +44,7 @@ function Termos() {
         <p>Ao utilizar o QueroPet, você reconhece que leu, compreendeu e concorda em se comprometer com estes Termos de Uso. Agradecemos por contribuir para a causa da adoção responsável de animais de estimação.</p>
       </div>
     </>
-  )
+  );
 }
 
-export default Termos
+export default Termos;

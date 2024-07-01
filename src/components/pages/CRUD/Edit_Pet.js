@@ -67,8 +67,8 @@ function Edit_Pet() {
       <div className='sidebar'>
         <Sidebar />
       </div>
-      <header className='header'>
-        <span>Busque o pet a ser editado</span>
+      <header>
+        Busque o pet a ser editado
       </header>
       <div className='main'>
         <form>

@@ -6,14 +6,11 @@
     justify-content: center;
     flex-direction: column;
   }
-  .container .header {
+  .container header {
     display: flex;
     align-items: center;
     flex-direction: column;
     margin-bottom: 40px;
-  }
-
-  .container .header span {
     font-weight: 300;
     font-size: 30px;
     line-height: 24px;

@@ -1,137 +1,175 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Dashboard.css';
-import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LineChart, Line }
-  from 'recharts';
+import Sidebar from './CRUD/Sidebar';
 
 function Dashboard() {
+  const [requests, setRequests] = useState([]);
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+  const [currentRequest, setCurrentRequest] = useState(null);
 
-  const data = [
-    {
-      name: 'Page A',
-      uv: 4000,
-      pv: 2400,
-      amt: 2400,
-    },
-    {
-      name: 'Page B',
-      uv: 3000,
-      pv: 1398,
-      amt: 2210,
-    },
-    {
-      name: 'Page C',
-      uv: 2000,
-      pv: 9800,
-      amt: 2290,
-    },
-    {
-      name: 'Page D',
-      uv: 2780,
-      pv: 3908,
-      amt: 2000,
-    },
-    {
-      name: 'Page E',
-      uv: 1890,
-      pv: 4800,
-      amt: 2181,
-    },
-    {
-      name: 'Page F',
-      uv: 2390,
-      pv: 3800,
-      amt: 2500,
-    },
-    {
-      name: 'Page G',
-      uv: 3490,
-      pv: 4300,
-      amt: 2100,
-    },
-  ];
+  useEffect(() => {
+    const mockData = [
+      { id: 1, petName: 'Rex', userName: 'João', status: 'pending' },
+      { id: 2, petName: 'Luna', userName: 'Maria', status: 'pending' },
+      { id: 3, petName: 'Bella', userName: 'Carlos', status: 'pending' },
+    ];
+
+    const fetchRequests = async () => {
+      try {
+        // const response = await fetch('API_URL_TO_GET_REQUESTS');
+        // const data = await response.json();
+        // setRequests(data);
+
+        // Usando dados fictícios para debug
+        setRequests(mockData);
+      } catch (error) {
+        console.error('Erro ao buscar requisições:', error);
+      }
+    };
+    fetchRequests();
+  }, []);
+
+  const handleAccept = async (id) => {
+    try {
+      // Simular requisição de atualização
+      // const response = await fetch(`API_URL_TO_UPDATE_REQUEST/${id}`, {
+      //   method: 'POST',
+      //   body: JSON.stringify({ status: 'accepted' }),
+      //   headers: {
+      //     'Content-Type': 'application/json',
+      //   },
+      // });
+      // if (response.ok) {
+      setRequests((prevRequests) =>
+        prevRequests.map((r) =>
+          r.id === id ? { ...r, status: 'accepted' } : r
+        )
+      );
+      alert('Solicitação aceita com sucesso!');
+      // }
+    } catch (error) {
+      console.error('Erro ao aceitar a solicitação:', error);
+    }
+  };
+
+  const handleReject = async (id) => {
+    try {
+      // Simular requisição de atualização
+      // const response = await fetch(`API_URL_TO_UPDATE_REQUEST/${id}`, {
+      //   method: 'POST',
+      //   body: JSON.stringify({ status: 'rejected' }),
+      //   headers: {
+      //     'Content-Type': 'application/json',
+      //   },
+      // });
+      // if (response.ok) {
+      setRequests((prevRequests) =>
+        prevRequests.map((r) =>
+          r.id === id ? { ...r, status: 'rejected' } : r
+        )
+      );
+      alert('Solicitação rejeitada com sucesso!');
+      // }
+    } catch (error) {
+      console.error('Erro ao rejeitar a solicitação:', error);
+    }
+  };
+
+  const handleEdit = (request) => {
+    setCurrentRequest(request);
+    setIsEditModalOpen(true);
+  };
+
+  const handleSaveEdit = () => {
+    setRequests((prevRequests) =>
+      prevRequests.map((r) =>
+        r.id === currentRequest.id ? currentRequest : r
+      )
+    );
+    setIsEditModalOpen(false);
+    alert('Informações atualizadas com sucesso!');
+  };
+
+  const handleCloseEditModal = () => {
+    setIsEditModalOpen(false);
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setCurrentRequest((prevRequest) => ({
+      ...prevRequest,
+      [name]: value,
+    }));
+  };
 
   return (
     <>
-      <div className='dashboard-container'>
-        <main className='main-container'>
-          <div className='main-title'>
-            <h3>Painel de Controle</h3>
-          </div>
-
-          <div className='main-cards'>
-            <div className='card'>
-              <div className='card-inner'>
-                <h3>Pets Adicionados</h3>
-                {/* <BsFillArchiveFill className='card_icon'/> */}
+      <div className="grid-container">
+        <div className="sidebar">
+          <Sidebar />
+        </div>
+        <header className="header">Painel de Controle de Adoções</header>
+        <div className="main">
+          {requests.length > 0 ? (
+            requests.map((request) => (
+              <div key={request.id} className="request-item">
+                <p><strong>Pet:</strong> {request.petName}</p>
+                <p><strong>Usuário:</strong> {request.userName}</p>
+                <p><strong>Status:</strong> {request.status}</p>
+                <div className="button-container">
+                  <button onClick={() => handleAccept(request.id)} className="accept-button">Aceitar</button>
+                  <button onClick={() => handleReject(request.id)} className="reject-button">Rejeitar</button>
+                  <button onClick={() => handleEdit(request)} className="edit-button">Editar</button>
+                </div>
               </div>
-              <h1>300</h1>
-            </div>
-            <div className='card'>
-              <div className='card-inner'>
-                <h3>Pets Adotados</h3>
-                {/* <BsFillGrid3X3GapFill className='card_icon'/> */}
-              </div>
-              <h1>12</h1>
-            </div>
-            <div className='card'>
-              <div className='card-inner'>
-                <h3>Pets Atualizados</h3>
-                {/* <BsPeopleFill className='card_icon'/> */}
-              </div>
-              <h1>33</h1>
-            </div>
-          </div>
-
-          <div className='charts'>
-            <ResponsiveContainer width="100%" height="100%">
-              <BarChart
-                width={500}
-                height={300}
-                data={data}
-                margin={{
-                  top: 5,
-                  right: 30,
-                  left: 20,
-                  bottom: 5,
-                }}
-              >
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="name" />
-                <YAxis />
-                <Tooltip />
-                <Legend />
-                <Bar dataKey="pv" fill="#8884d8" />
-                <Bar dataKey="uv" fill="#82ca9d" />
-              </BarChart>
-            </ResponsiveContainer>
-
-            <ResponsiveContainer width="100%" height="100%">
-              <LineChart
-                width={500}
-                height={300}
-                data={data}
-                margin={{
-                  top: 5,
-                  right: 30,
-                  left: 20,
-                  bottom: 5,
-                }}
-              >
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="name" />
-                <YAxis />
-                <Tooltip />
-                <Legend />
-                <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{ r: 8 }} />
-                <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
-              </LineChart>
-            </ResponsiveContainer>
-          </div>
-        </main>
+            ))
+          ) : (
+            <p>Nenhuma solicitação de adoção no momento.</p>
+          )}
+        </div>
       </div>
 
+      {isEditModalOpen && (
+        <div className="modal">
+          <div className="modal-content">
+            <span className="close" onClick={handleCloseEditModal}>&times;</span>
+            <h2>Editar Solicitação</h2>
+            <div className="inputContainer">
+              <label>Nome do Pet</label>
+              <input
+                type="text"
+                name="petName"
+                value={currentRequest.petName}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="inputContainer">
+              <label>Nome do Usuário</label>
+              <input
+                type="text"
+                name="userName"
+                value={currentRequest.userName}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="inputContainer">
+              <label>Status</label>
+              <select
+                name="status"
+                value={currentRequest.status}
+                onChange={handleChange}
+              >
+                <option value="pending">Pendente</option>
+                <option value="accepted">Aceito</option>
+                <option value="rejected">Rejeitado</option>
+              </select>
+            </div>
+            <button onClick={handleSaveEdit} className="save-button">Salvar</button>
+          </div>
+        </div>
+      )}
     </>
-  )
+  );
 }
 
 export default Dashboard;

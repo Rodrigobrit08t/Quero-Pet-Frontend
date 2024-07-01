@@ -42,8 +42,8 @@ function Cadastrar() {
     return (
         <div>
             <div className="container">
-                <header className='header'>
-                    <span>Por favor digite suas informações de cadastro</span>
+                <header>
+                    Por favor digite suas informações de cadastro
                 </header>
 
                 <form>

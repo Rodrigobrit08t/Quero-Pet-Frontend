@@ -9,7 +9,7 @@ function Contato() {
   return (
     <>
       <div className='main-container'>
-        <header>Contato</header>
+        <h1>Contato</h1>
         <form>
           <div className="inputContainer">
             <label htmlFor="name">Nome</label>

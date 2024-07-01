@@ -5,8 +5,8 @@
   grid-template-areas:
     'sidebar header header header'
     'sidebar main main main';
-  height: 100vh;
-  background-color: #1d2634;
+  height: 100%;
+  background-color: #FEFEFE;
   overflow-y: auto;
 }
 
@@ -14,21 +14,23 @@
   grid-area: sidebar;
   width: 200px;
   height: 100%;
-  background-color: #263043;
+  background: linear-gradient(to bottom, #90EE90, #98FB98);
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
   transition: all 0.5s;
   -webkit-transition: all 0.5s;
   position: relative;
   z-index: 1;
 }
 
-.grid-container .header {
+.grid-container header {
   grid-area: header;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #1d2634;
-  padding: 40px;
-  font-size: 25px;
+  background-color: #FEFEFE;
+  color:#263043;
+  padding: 10px;
+  font-size: 40px;
 }
 
 .grid-container .main {
@@ -36,7 +38,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #1d2634;
+  background-color: #FEFEFE;
+  color:#263043;
   padding: 10px;
 }
 
@@ -57,7 +60,7 @@
 
 .sidebar-list-item>a {
   text-decoration: none;
-  color: #9e9ea4;
+  color:#222;
 }
 
 .sidebar-responsive {
@@ -66,11 +69,11 @@
   z-index: 12 !important;
 }
 
-.inputContainerRadio {
+.radioContainer {
   display: flex;
-  justify-content: flex-start;
-  flex-direction: column;
-
+  align-items: center;
+  flex-direction: row;
+  gap: 10px; /* Add gap between radio buttons and labels */
 }
 
 .grid-container .main form{
@@ -83,6 +86,7 @@
   display: flex;
   align-items: flex-start;
   flex-direction: column;
+  width: 100%;
 }
 
 .grid-container form  .inputContainer label {
@@ -102,7 +106,18 @@
   border: 1px solid #5C73DB;
   border-radius: 12px;
   margin-bottom: 12px;
+}
 
+.grid-container form  .inputContainer .radioContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.grid-container form  .inputContainer .small-radio {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px; /* Adjust spacing to align properly with text inputs */
 }
 
 .grid-container .submit {
@@ -122,7 +137,6 @@
   justify-content: center;
   gap: 15px;
   margin: 15px;
-
 }
 
 .grid-container .submit:hover {
@@ -141,7 +155,8 @@
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.4); 
+  margin-top: 10px;
 }
 
 .modal-content {
@@ -149,27 +164,45 @@
   margin: auto;
   padding: 20px;
   border: 1px solid #888;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   width: 80%;
   max-width: 500px;
+  max-height: 80%; /* Limitar a altura máxima */
+  overflow-y: auto; /* Adicionar rolagem vertical se necessário */
   position: relative;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
-.modal-content .inputContainer{
+.modal-content .inputContainer {
   padding: 3px;
-  
+  width: 100%;
 }
 
-.modal-content .inputContainer input{
+.modal-content .inputContainer input {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
+  padding: 12px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.modal-content .inputContainer label {
+  font-weight: 400;
+  font-size: 16px;
+  margin-bottom: 8px;
 }
 
 .close {
   color: #aaa;
-  float: right;
+  position: absolute;
+  top: 10px;
+  right: 10px;
   font-size: 28px;
   font-weight: bold;
 }
@@ -179,4 +212,33 @@
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+.modal h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.modal-content .submit {
+  height: 48px;
+  width: 120px;
+  background: #4763E4;
+  border-radius: 12px;
+  color: #fff;
+  border: none;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.modal-content .submit:hover {
+  cursor: pointer;
+  opacity: 0.8;
 }

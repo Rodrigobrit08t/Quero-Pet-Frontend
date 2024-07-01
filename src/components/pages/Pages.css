@@ -1,7 +1,21 @@
-.main-container {
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
     display: flex;
     flex-direction: column;
-    height: 100%;
+}
+
+.main-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start; 
+    align-items: left; 
+    margin: 15px 25px 0px 25px;
+    min-height: calc(100vh - 100px);  
+    padding: 20px; 
+    box-sizing: border-box; 
 }
 
 h1 {
@@ -9,23 +23,15 @@ h1 {
     text-align: left;
 }
 
-h4,
-h5,
-h6 {
+h4, h5, h6 {
     padding: 5px;
     text-align: left;
 }
 
 p {
     padding: 5px;
-}
-
-header {
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-    margin-bottom: 40px;
-    font-size: 40px;
+    text-align: left;
+    max-width: 800px; 
 }
 
 .main-container form {
@@ -57,10 +63,9 @@ header {
     border: 1px solid #5C73DB;
     border-radius: 12px;
     margin-bottom: 12px;
-
 }
 
-.submit-button{
+.submit-button {
     width: 260px;
     height: 48px;
     background: #4763E4;
@@ -72,22 +77,22 @@ header {
     font-weight: 400;
     font-size: 18px;
     line-height: 22px;
-  
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 15px;
 }
 
-textarea{
+textarea {
     padding: 15px;
     margin-bottom: 15px;
     border-radius: 12px;
 }
 
-.mensagem{
+.mensagem {
     font-weight: 400;
     font-size: 16px;
     line-height: 19px;
     margin-bottom: 8px;
 }
+

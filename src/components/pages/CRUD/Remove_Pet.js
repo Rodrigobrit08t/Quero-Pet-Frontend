@@ -23,8 +23,8 @@ function Remove_Pet() {
       <div className='sidebar'>
         <Sidebar />
       </div>
-      <header className='header'>
-        <span>Busque o pet a ser removido</span>
+      <header>
+        Busque o pet a ser removido
       </header>
       <div className='main'>
         <form>
